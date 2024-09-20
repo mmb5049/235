@@ -1,0 +1,23 @@
+figure{
+    max-width: 650px;
+    /*overflow: auto;*/
+}
+
+figure img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+header, footer, main{
+    width: 90%vw;
+    margin: 0 auto;
+}
+
+#tetlist{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+div.tet{
+    flex: 0 0 450px;
+}

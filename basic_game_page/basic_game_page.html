@@ -8,14 +8,156 @@
             h1 { 
                 color: green;
                 font-family: sans-serif;
+                text-align: center;
                 }
+
+            .rightPic{
+                float: right;
+                width: 15%;
+                height: 15%;
+                margin-right: 75px;
+            }
+            .poster{
+                /*I learn the display from W3schools*/
+                display: block;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                height: 80%;
+            }
+            .lastPoster{
+                display: block; 
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                height: 80%
+
+            }
+            .description{
+                font-size: 18px;
+                margin-left: 200px;
+                margin-right: 200px;
+                min-height: 250px;
+                text-align: center;
+                margin-bottom: 0px;
+            }
+            body{
+                background-color:#729485;
+            }
+            .info{
+                margin-left: 75px;
+                float:left;
+            }
+            .categories{
+                float: left;
+                margin-left: 75px;
+            }
+            blockquote{
+                /*This is used to clear the float (learn from W3schools)*/
+                clear:both;
+                margin-top: 300px;
+                color:lightblue;
+                background-color: rgb(69, 38, 38);
+                padding: 1rem;
+                width: 90%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            hr{
+                clear:both;
+            }
+            
+            a{
+                color: lightblue;
+            }
+            footer{
+                background-color: gray;
+                margin-top: 100px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 20px;
+            }
+            
+            
         </style>
         
     </head>
 
     <body>
+        <main>
         <h1>
         Destroy All Human!
         </h1>
+
+        <p class = "description">Destroy All Human is an open world game action-adventure game. The game is set in the 1950s a sarcastic alien sent to Earth 
+        to harvest human DNA and subjugate humanity. 
+        Players take on the role of Crypto, using advanced alien technology, psychic abilities, 
+        and flying saucers to terrorize humans, battle government agents, and destroy key locations.
+        The game features a mix of open-world exploration and mission-based gameplay, with a satirical tone poking 
+        fun at Cold War-era paranoia, pop culture, and B-movie science fiction.</p>
+
+        <img src = "images/header.jpg" alt="official poster of Destroy All Human" class = "poster">
+
+        <br>
+        
+        <img src = "images/playstationDAH.png" alt = "Destroy All Humans on Playstation" class = "rightPic">
+
+        <ul class = "info">
+            <li><strong>Released:</strong> July 28, 2020</li>
+            <li><strong>Publishers:</strong> THQ Nordic GmbH</li>
+            <li><strong>Developers:</strong> Black Forest Games GmbH</li>
+            <li><strong>Moby Score:</strong> 7.3</li>
+            <li><strong>Critics:</strong> 74%</li>
+            <li><strong>Players:</strong> 4/5 stars</li>
+        </ul>
+
+        
+        <ul class = "categories">
+            <li><strong>Genre:</strong> Action</li>
+            <li><strong>Perspective:</strong> Behind view</li>
+            <li><strong>Interface:</strong> Direct control</li>
+            <li><strong>Setting:</strong> Sci-fi/futuristic</li>
+            <li><strong>Narrative:</strong> Comedy</li>
+            <li><strong>Players:</strong> 1</li>
+        </ul>
+
+        <blockquote>
+            “Rebuilt from the ground up in every way, Destroy All Humans! (2020) puts every other remaster on notice -- 
+            this is how it's done.” <br>
+            90/100 - GamingTrend
+            <br> 
+            <br>
+            <a href= "https://gamingtrend.com/feature/reviews/i-think-this-calls-for-the-jumbo-probe-destroy-all-humans-2020-review">GamingTrend review</a>
+        </blockquote>
+        
+        <blockquote>
+            “Destroy All Humans is a fantastic, faithful experience. Both older fans and new fans will find a lot of enjoyment 
+            here and hopefully we will see a lot more of Crypto's antics going into the new generation.” <br>
+            8.5/10 - GameGrin<br>
+            <br>
+            <a href = "https://www.gamegrin.com/reviews/destroy-all-humans-review">GameGrin Review</a>
+
+        </blockquote>
+        
+        <blockquote>
+            “It may be a bit of a stretch to see if any game holds up after 15 years, but Destroy All Humans!
+             is still a mindless romp of manic mass destruction that excels in the replayability department. 
+             A brilliantly polished slice of nostalgia, Destroy All Humans! knows exactly where to focus its energies with its silly story,
+              updated gameplay and a graphical overhaul that is light-years ahead of the original invasion.” <br>
+            8.5/10 - Critical Hit
+            <br><br>
+            <a href = "https://www.criticalhit.net/gaming/destroy-all-humans-review-invader-sim/">Critical Hit review</a>
+        </blockquote>
+        
+
+        <img src = "images/poster2.jpg" alt = "" class = "lastPoster">
+        
+        </main>
+        <footer>
+            All data are from  <a href = "https://www.mobygames.com/game/146929/destroy-all-humans/">MobyGames</a>
+        </footer>
     </body>
 </html>

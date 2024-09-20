@@ -1,0 +1,32 @@
+/* Do everything in this file */
+
+h1, h2, h3{
+    border-bottom: 1px solid red;
+}
+
+figure{
+    float: right;
+    width: 40%;
+}
+
+figure img{
+    width: 100%;
+}
+
+h2{
+    clear: right;
+}
+
+div.tet{
+    border: 1px dotted green;
+    float: left;
+    width: 33%;
+}
+footer{
+    clear: both;
+    position: fixed;
+    top: 0px;
+    right: 0;
+    background-color: azure;
+    z-index: -6;
+}
