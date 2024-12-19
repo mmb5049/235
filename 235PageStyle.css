@@ -46,7 +46,7 @@ div{
     font-size: 18px;
     background-color: orange;
 }
-#project1{
+.project1{
     display: flex;
     align-content: center;
     justify-content: center;
@@ -77,7 +77,7 @@ h4 a{
 h3{
     text-align: center;
 }
-#project1 div{
+.project1 div{
     align-items: center;
     margin: auto;
     width: 100%;
@@ -92,15 +92,15 @@ h3{
 
 }
 
-#project1 p{
+.project1 p{
     width: 80%;
 }
 
-#project1 a{
+.project1 a{
    color: darkred;
 }
 
-#project1 img{
+.project1 img{
     max-width: 80%;
     max-height: 80%;
     position: relative;

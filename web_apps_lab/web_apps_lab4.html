@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps Lab 4</title>
+	<style>
+		body{border:1px solid gray;}
+	</style>
+</head>
+<body>
+<h1>My Favorites</h1>
+<h2>My Favorite Colors</h2>
+
+<ol id="colorsList">
+	
+</ol>
+
+<h2>My Favorite Foods</h2>
+
+<ol id="foodsList">
+	
+</ol>
+
+<h2>My Favorite Links</h2>
+
+<ol id="linksList">
+	
+</ol>
+
+<script>
+"use strict";
+
+// Arrays for colors and foods
+let colors = ["red","yellow","blue","white","black"];
+let foods = ["pho","hamburger","tacos","pizza","pasta"]; 
+
+// Object literal for favorite links
+let links = {
+	"RIT": "http://www.rit.edu",
+	"RWAG" : "https://www.facebook.com/RWAGclub",
+	"New Media Club" : "http://newmediaclub.cias.rit.edu"
+};
+
+// Function to create and populate a list
+const createList = (listElement, array = ["puppydogs", "butterflies", "lollipops"]) => {
+	array.forEach(item => {
+		let listItem = document.createElement("li");
+		listItem.textContent = item;
+		listElement.appendChild(listItem);
+	});
+};
+
+// 1. Call createList() for colors
+createList(document.getElementById("colorsList"), colors);
+
+// 2. Call createList() for foods
+createList(document.getElementById("foodsList"), foods);
+
+// 3. Loop through the links object and append functioning links to #linksList
+let linksList = document.getElementById("linksList");
+for (let siteName in links) {
+	let listItem = document.createElement("li");
+	let linkElement = document.createElement("a");
+	linkElement.href = links[siteName];
+	linkElement.textContent = siteName;
+	linkElement.target = "_blank";  // Open link in a new tab
+	listItem.appendChild(linkElement);
+	linksList.appendChild(listItem);
+}
+
+</script>
+</body>
+</html>

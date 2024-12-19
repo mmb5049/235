@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PixiJS-4</title>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+  </head>
+  <body>
+    <script type="module">
+      const app = new PIXI.Application();
+      await app.init({ width: 640, height: 360 });
+      document.body.appendChild(app.canvas);
+
+      // #1 - make some squares
+      const s1 = makeRectangle();
+      s1.x = 100;
+      s1.y = 100;
+
+      const s2 = makeRectangle(80, 40, 0xff00ff);
+      s2.x = 200;
+      s2.y = 100;
+
+      app.stage.addChild(s1);
+      app.stage.addChild(s2);
+
+      // #2 - make some PixiJS buttons
+      // https://pixijs.download/release/docs/scene.Sprite.html
+      const texture = await PIXI.Assets.load("button-130.png");
+      const b1 = new PIXI.Sprite(texture);
+      b1.buttonMode = true;
+      b1.anchor.set(0.5);
+      b1.x = 100;
+      b1.y = 200;
+      app.stage.addChild(b1);
+
+      const b2 = new PIXI.Sprite(texture);
+      b2.buttonMode = true;
+      b2.anchor.set(0.5);
+      b2.x = 250;
+      b2.y = 200;
+      app.stage.addChild(b2);
+
+      // #3 add events to the buttons
+      b1.interactive = true;
+      // element.on('event-name',function-to-call);
+      b1.on("pointerup", (e) => {
+        s1.rotation += Math.PI / 12;
+        s2.rotation -= Math.PI / 12;
+      });
+
+      b2.interactive = true;
+      b2.on("pointerup", (e) => {
+        s1.height += 20;
+        s1.width += 20;
+        s2.height += 20;
+        s2.width += 10;
+      });
+
+      // #4 make b1 act more like a button (mouseover,mousedown etc)
+      b1.on("pointerover", (e) => {
+        e.target.tint = 0xbbbbbb;
+      });
+      b1.on("pointerdown", (e) => {
+        e.target.tint = 0x888888;
+      });
+      b1.on("pointerup", (e) => {
+        e.target.tint = 0xbbbbbb;
+      });
+      b1.on("pointerout", (e) => {
+        e.currentTarget.tint = 0xffffff;
+      });
+      b1.on("pointerupoutside", (e) => {
+        e.target.tint = 0xffffff;
+      });
+
+      function makeRectangle(width = 50, height = 50, color = 0xff0000) {
+        // https://pixijs.download/release/docs/PIXI.Graphics.html
+        let rect = new PIXI.Graphics();
+        rect.rect(-width * 0.5, -height * 0.5, width, height);
+        rect.fill(color);
+        rect.stroke({ width: 4, color: 0xffff00, alpha: 1 });
+        return rect;
+      }
+    </script>
+  </body>
+</html>

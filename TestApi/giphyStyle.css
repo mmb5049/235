@@ -1,0 +1,184 @@
+
+    
+body{
+    background: url(media/background.jpg);
+    color: yellow;
+    font-family: 'Roboto Mono', monospace;
+}
+
+header{
+    max-width: 100%;
+    max-height:195px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+header h1{
+    margin:0;
+    color:blue;
+    text-align:center;
+    font-size:10vw;
+    padding-top: 25px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+input[type="text"] {
+    width: clamp(200px, 50%, 500px); /* Min 200px, default 50%, max 500px */
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid blue;
+    border-radius: 4px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically, if needed */
+    height: 100px;          /* Adjust height as necessary */
+}
+
+#status{
+    font-style: italic;
+}
+
+#content{
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 40px 20px;
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the top */
+    justify-content: flex-start; /* Make sure everything stays at the top */
+}
+
+.result img{
+    width:100%;
+    box-shadow: 0 10px 20px 0px;
+}
+
+.text-content {
+    order: -1; /* Ensure the text is above the image */
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.import-date{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+button{
+    display : inline-block;
+    cursor : pointer;
+
+    border-style : solid;
+    border-width : 1px;
+    border-radius: 50%;
+    padding : 10px 18px;
+    box-shadow : 0 1px 4px rgba(0,0,0,.6);
+    font-size : 9.5pt;
+    font-weight : bold;
+    color : #fff;
+    text-shadow : 0 1px 3px rgba(0,0,0,.4);
+    font-family : sans-serif;
+    text-decoration : none;
+}
+
+button.find, button.favorite{
+    border-color: #8fc800;
+    background: lightblue;
+    background: linear-gradient(to top, #8fc800 0%,#438c00 100%);
+    color: black;
+}
+
+button#loadMore {
+    display: block; /* Ensures it behaves as a block-level element */
+    margin: 20px auto; /* Centers horizontally and adds vertical spacing */
+    padding: 12px 20px; /* Adjust padding for better button size */
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    color:black;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    font-size: 10pt; /* Slightly larger font size */
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+button:hover{
+    background: blue;
+    color: yellow;
+}
+
+button#loadMore:hover{
+    background: blue;
+    color: yellow;
+}
+
+button:active{
+    background: darkblue;
+    box-shadow : 0 0 6px rgba(0,0,0,.6);
+}
+
+button:focus {outline:0;}
+
+.widgets{
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom:1em;
+    display: flex; /* Use flexbox to align elements */
+    justify-content: center; /* Center the search box inside widgets */
+    position: relative;
+}
+
+
+/* Styling for search terms dropdown */
+#searchTermsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; 
+    background-color: #191337;
+    border: 1px solid #ccc;
+    width: clamp(200px, 50%, 500px); /* Match the width of the .widgets container (and the search bar) */
+    --currentWidth: width;
+    max-height: 150px; /* Limit dropdown height */
+    overflow-y: auto; /* Add vertical scrolling if content overflows */
+    display: none; /* Hide by default */
+    z-index: 1000; /* Ensure it stays above other elements */
+    top: calc(100% - 10px); /* Position just below the search bar with spacing */
+    left: calc(100% - var(--currentWidth)); 
+}
+
+#searchTermsList li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#searchTermsList li:hover {
+    background-color: #eee;
+}
+
+/* Show the list when search input is focused or hovered */
+.widgets:hover #searchTermsList,
+#searchterm:focus + #searchTermsList {
+    display: block;
+}
+

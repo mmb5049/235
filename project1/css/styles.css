@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url(..//media/background.jpg);
+    color: white;
+}
+
+h1{
+    font-size: 100px;
+}
+
+h2{
+    color: lightblue;
+}
+
+.grid-container{
+    display: grid;
+    padding-top: 120px;
+    grid-template-rows: 1fr 2fr 2fr 2fr 0.5fr 1fr;
+    grid-template-areas: 
+        "header"
+        "history"
+        "esportDef"
+        "rightNow"
+        "regions"
+        "bestPlayer";
+
+        min-height: 100vh;
+        max-width: 1200px;
+        margin: 0 auto;
+}
+
+.bestPlayer {
+    flex-direction: column; /* Stack the text and images vertically */
+    align-items: flex-start; /* Align content to the left */
+}
+
+.imgContainer {
+    margin-top: 20px; /* Add margin between text and images */
+    align-self: center; /* Center the image in the container if needed */
+}
+
+.textContainer {
+    width: 100%; /* Ensure the text takes full width */
+}
+
+.faker2019,
+.faker2022{
+    width: 256px;
+    margin: auto;
+}
+
+@media screen and (min-width:860px){
+    .grid-container {
+        padding-top: 120px;
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: 0.5fr 2fr .5fr 0.5fr;
+        grid-template-areas: 
+            "header header header"
+            "history esportDef rightNow"
+            "history regions rightNow"
+            "bestPlayer bestPlayer bestPlayer";
+
+            min-height: 100vh;
+            max-width: 1500px;
+            margin: 0 auto;
+    }
+
+    .bestPlayer {
+        grid-area: bestPlayer;
+        padding: 20px;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Vertically center the content */
+        gap: 20px; /* Add space between the image and the text */
+        position: relative; /* Ensures positioned children are constrained within this container */
+        overflow: hidden; /* Prevents any overflow from the images */
+        right: auto;
+        left:auto;
+    }
+
+    .imgContainer{
+        width: 256px;
+        position: relative;
+    }
+    
+    .textContainer {
+        display: flex;
+        width: 1000px;
+        flex-direction: column; /* Stack the <h2> and <p> vertically */
+        justify-content: center; /* Vertically align the text in the middle */
+    }
+
+    .faker2022{
+        width: 256px;
+        height: auto;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        border: 1px green solid;
+        z-index: 2;
+        
+    }
+    
+    .faker2019{
+        width: 256px;
+        position: relative;
+        top: -20px;
+        left: 120px;
+        border: 1px red solid;
+        z-index: 1;
+    }
+    
+}
+
+.header {
+    grid-area: header;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.history {
+    grid-area: history;
+    /* background-color: #ffeb99; */
+    padding: 40px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack text and images vertically */
+}
+
+
+
+.esportDef {
+    grid-area: esportDef;
+    /* background-color: #d1e7dd; */
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.esportDef h2 {
+    margin-bottom: 20px; /* Adds space between the heading and the paragraph */
+}
+
+.rightNow {
+    grid-area: rightNow;
+    padding: 20px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack text and images vertically */
+    gap: 20px; /* Add space between text and images */
+}
+
+
+
+
+
+.regions{
+    grid-area: regions;
+    padding: 20px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack text and images vertically */
+    gap: 20px; /* Add space between text and images */
+}
+
+
+
+
+.skt2013{
+    width: 300px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    border: 1px red solid;
+    z-index: 2;
+}
+
+.history img {
+    width: 100%; /* Images will take up 100% of the parent's width */
+    max-width: 300px; /* Ensures images don't get larger than 256px */
+    height: auto; /* Maintains the aspect ratio */
+    margin: 0 auto; /* Center the images */
+
+    
+}
+.historyImages{
+    align-self: center;
+}
+.fnc{
+    width :300px;
+    height: auto;
+    position: relative;
+    top: -30px;
+    left: 30px;
+    border: 1px green solid;
+    z-index: 3;
+    
+}
+
+.skt2015{
+    width: 320px;
+    height: auto;
+    position: relative;
+    
+    left: 0px;
+    border: 1px green solid;
+    z-index: 2;
+}
+
+.world2024{
+    max-width: 100%;
+    min-width: none;
+}
+
+.arena{
+    max-width: 100%;
+    min-width: none;
+}
+
+.circle{
+    width: 300px;
+    height: 300px;
+    background: url(../media/LeagueLogo.jpg) no-repeat center center;
+    background-size: cover; /* Make the background image fit the circle */
+    border-radius: 50%;
+    float: right;
+    shape-outside: circle();
+    margin: 0px 10px 10px 10px; /* Add some space around the circle */;
+}
+
+.navbar{
+    
+    position: fixed;
+    top: 0; 
+    left: 0;
+    background-color: black;
+    width: 100%;
+    padding: 35px 12%;
+    backdrop-filter: blur;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+.navbar a{
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin: 0 20px;
+    text-decoration: none;
+    list-style: none;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: #FFFF66;
+    border-bottom: 3px solid #FFFF66;
+}

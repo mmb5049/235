@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps-5</title>
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+		#colorform {
+			background-color: #dfecdf;
+			color: #111;
+			padding: 1em;
+			width: 400px;
+		}
+		#colorform p#info {
+			background-color: white;
+			color: black;
+			width: 300px;
+			height: 100px;
+			padding: .5em;
+		}
+		#colorform legend {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+	</style>
+</head>
+<body>
+
+<div id="colorform">
+	<legend>Choose your favorite color!</legend>
+	<p><input type="radio" name="colorGroup" id="colorGroupRed" value="red" /> Red</p>
+	<p><input type="radio" name="colorGroup" id="colorGroupGreen" value="green" /> Green</p>
+	<p><input type="radio" name="colorGroup" id="colorGroupBlue" value="blue" /> Blue</p>
+	<p><button id="colorButton" type="button">Submit</button></p>
+	<p id="info"></p>
+</div>
+
+<script>
+"use strict";
+
+// Get reference to the legend element
+const legend = document.querySelector('legend');
+
+// Get reference to all radio buttons
+const radioButtons = document.querySelectorAll('input[name="colorGroup"]');
+
+// Variable to store selected color
+let selectedColor = '';
+
+// Add a change event listener to each radio button
+radioButtons.forEach((radio) => {
+	radio.addEventListener('change', (e) => {
+		selectedColor = e.target.value;  // Store the selected color
+		document.getElementById('info').textContent = `You have selected "${selectedColor}"!`;
+	});
+});
+
+// Add a click event listener to the Submit button
+document.getElementById('colorButton').addEventListener('click', () => {
+	if (selectedColor) {
+		legend.style.color = selectedColor;  // Change the color of the legend text
+		document.getElementById('info').textContent = `Your FINAL CHOICE is "${selectedColor}"`;
+	} else {
+		document.getElementById('info').textContent = "Please select a color!";
+	}
+});
+</script>
+
+</body>
+</html>

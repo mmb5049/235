@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+ 	<title>Giphy Finder</title>
+ 	<link rel = "stylesheet" type= "text/css" href="giphyStyle.css">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto+Mono&display=swap" rel="stylesheet">
+  	<script src = "giphyScript.js"> </script>
+
+  
+</head>
+
+<body>
+<header>
+	<h1>Giphy Finder</h1>
+</header>
+
+<div class="search-container">
+	<div class="widgets">
+		<input id="searchterm" type="text" size="20" maxlength="20" autofocus value="" placeholder="Your search">
+		<ul id="searchTermsList" class="hidden"></ul> <!-- Hidden list to display search terms -->
+	</div>
+</div>
+
+
+
+<div class = "features">
+	<div class="widgets" >
+		Sort by: 
+		<select id="sortOrder">
+			<option value="az">A-Z</option>
+			<option value="za">Z-A</option>
+			<option value="newest">Newest to Oldest</option>
+			<option value="oldest">Oldest to Newest</option>
+		</select>
+	</div>
+	
+	
+	<div class="widgets" id="ratingFilter">
+		Rating:
+		<select >
+			<option value="">None</option>
+			<option value="g">G</option>
+			<option value="pg">PG</option>
+			<option value="pg-13">PG-13</option>
+		</select>
+	</div>
+	
+	<div class="widgets">
+		<button type="button" id="viewFavorites" class="favorite">View Favorite GIFs</button>
+	</div>
+</div>
+
+<div class="widgets">
+	<button type="button" id="search" class="find">Find GIFs!</button>
+</div>
+<div id="status">Ready to Search!</div>
+<hr>
+
+<h2>Results</h2>
+<div id="content">
+</div>
+
+<button id="loadMore">Load More</button>
+
+</body>
+</html>

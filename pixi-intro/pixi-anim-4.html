@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pixi Animation 4</title>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+    <script src="js/classes.js"></script>
+  </head>
+  <body>
+    <script type="module">
+      const app = new PIXI.Application();
+      await app.init({ width: 640, height: 360 });
+
+      document.body.appendChild(app.canvas);
+
+      const screenWidth = app.renderer.width;
+      const screenHeight = app.renderer.height;
+      const circles = [];
+
+      // #3 - get this app started!
+      createCircles();
+
+      // #2 - make some circles
+      function createCircles() {
+        // red circles
+        for (let i = 0; i < 5; i++) {
+          let c = new Circle();
+          c.x = Math.random() * (screenWidth - 100) + 50;
+          c.y = Math.random() * (screenHeight - 100) + 50;
+          circles.push(c);
+          app.stage.addChild(c);
+        }
+
+        // yellow circles
+        for (let i = 0; i < 10; i++) {
+          let c = new Circle(10, 0xffff00);
+          c.x = Math.random() * (screenWidth - 100) + 50;
+          c.y = Math.random() * (screenHeight - 100) + 50;
+          app.stage.addChild(c);
+          circles.push(c);
+        }
+      }
+
+      app.ticker.add(()=>
+        {
+            for (let c of circles){
+                c.move();
+                if (c.x <= c.radius || c.x >= screenWidth-c.radius){
+                    c.reflectX();
+                    c.move();
+                }
+                if (c.y <= c.radius || c.y >= screenHeight-c.radius){
+                    c.reflectY();
+                    c.move();
+                }
+            
+            }
+            
+        });
+    </script>
+  </body>
+</html>

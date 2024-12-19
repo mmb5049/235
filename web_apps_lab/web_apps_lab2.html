@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>DOM-3</title>
+	<style>
+		body{border:1px solid gray;}
+		p b{transform: rotate(20deg)}
+	</style>
+</head>
+<body>
+<h1>My Page</h1>
+<h2>Info</h2>
+<h2>Pictures</h2>
+<h2>More Info</h2>
+<p>Blah <b>Blah</b> Blah</p>
+<p>Blah <b>Blah</b> Blah</p>
+<p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+<footer>Copyright &copy; <b>20XX</b></footer>
+<script>
+	"use strict"; 
+  
+  // add your own code here.
+	// Change the .innerHTML of the first <h1> to "My UFO Page"
+        document.querySelector('h1').innerHTML = "My UFO Page";
+
+// Change the .innerHTML of the first <h2> to "My UFO Info"
+document.querySelectorAll('h2')[0].innerHTML = "My UFO Info";
+
+// Change the .innerHTML of the 2nd <h2> to "My UFO Pictures"
+document.querySelectorAll('h2')[1].innerHTML = "My UFO Pictures";
+
+// Change the .innerHTML of the 3rd <h2> to an empty string
+document.querySelectorAll('h2')[2].innerHTML = "";
+
+// Select the <body> element and make 2 style changes
+document.body.style.fontFamily = "sans-serif";
+document.body.style.color = "#FF4500";  // a reddish color in hexadecimal
+
+// Select the first paragraph and make some changes
+let firstParagraph = document.querySelector('p');
+firstParagraph.innerHTML = 'Report your UFO sightings here: <a href="http://www.nuforc.org" target="_blank">http://www.nuforc.org</a>';
+firstParagraph.style.color = "green";
+firstParagraph.style.fontWeight = "bold";
+firstParagraph.style.fontSize = "2em";
+firstParagraph.style.textTransform = "uppercase";
+firstParagraph.style.textShadow = "3px 2px #A44";
+
+// Change the .innerHTML of the 2nd paragraph to an empty string
+document.querySelectorAll('p')[1].innerHTML = "";
+
+// Change the .innerHTML of the 3rd paragraph to show a UFO image
+document.getElementById('lastParagraph').innerHTML = '<img src="https://media.newyorker.com/photos/64ca89f569af7f8649142d29/16:9/w_1717,h_966,c_limit/Wiley-UFO-03.jpg" alt="UFO" style="width:400px;">';
+
+// Change the .innerHTML of the <footer> copyright notice to show the current year and name
+let currentYear = new Date().getFullYear();
+document.querySelector('footer').innerHTML = `&copy; ${currentYear} Minh Bui`;
+	</script>
+</body>
+</html>

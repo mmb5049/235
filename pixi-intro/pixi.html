@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PixiJS-3</title>
+    <style>
+      button {
+        font-size: 1.5em;
+        margin: 0.25em;
+      }
+    </style>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <button id="move">Move</button>
+      <button id="rotate">Rotate</button>
+    </div>
+    <script type="module">
+      const app = new PIXI.Application();
+      await app.init({ width: 640, height: 360 });
+      document.body.appendChild(app.canvas);
+
+      // #1 - Create a square
+      // https://pixijs.download/release/docs/scene.Graphics.html
+      const square = new PIXI.Graphics();
+      square.rect(-20, -20, 40, 40); // x, y, width, height
+      square.fill(0xff0000); // red in hex
+      square.x = 25;
+      square.y = 50;
+      square.stroke({ width: 2, color: 0xffff00, alpha: 1 }); // yellow border
+
+      app.stage.addChild(square); // Add the square to the stage
+
+      // #2 - Create a circle
+      const circle = new PIXI.Graphics();
+      circle.circle(0, 0, 20);
+      circle.fill(0xff0000);
+      circle.x = 125;
+      circle.y = 50;
+
+      app.stage.addChild(circle);
+
+      // #3 - Create a line
+      const line = new PIXI.Graphics();
+      line.moveTo(0, 0);
+      line.lineTo(590, 0);
+      line.stroke({ width: 4, color: 0xff0000 });
+      line.x = 5;
+      line.y = 100;
+
+      app.stage.addChild(line);
+
+      // #4 - Create a polygon
+      const poly = new PIXI.Graphics();
+      poly.moveTo(0, 0);
+      poly.lineTo(-100, 100);
+      poly.lineTo(100, 100);
+      poly.lineTo(0, 0);
+      poly.fill(0xff00ff);
+      poly.stroke({ width: 3, color: 0x00ff00, alpha: 1 });
+      poly.x = 125;
+      poly.y = 125;
+      app.stage.addChild(poly);
+
+      // #5 Target shape x positions by adding events to move button
+      document.querySelector("#move").onclick = (e) => {
+        square.x += 10;
+        circle.x += 10;
+        line.x += 10;
+        poly.x += 10;
+      };
+
+      // #6 Target shape rotations by adding events to rotate button
+      document.querySelector("#rotate").onclick = (e) => {
+        let amt = Math.PI / 6;
+        square.rotation += amt;
+        line.rotation += amt;
+        poly.rotation += amt;
+        circle.width += 5;
+        circle.height += 5;
+      };
+    </script>
+  </body>
+</html>

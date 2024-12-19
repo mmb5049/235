@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps-5 with Checkboxes</title>
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+		#colorform {
+			background-color: #dfecdf;
+			color: #111;
+			padding: 1em;
+			width: 400px;
+		}
+		#colorform p#info {
+			background-color: white;
+			color: black;
+			width: 300px;
+			height: 100px;
+			padding: .5em;
+		}
+		#colorform legend {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+	</style>
+</head>
+<body>
+
+<div id="colorform">
+	<legend>Choose your favorite colors!</legend>
+	<p><input type="checkbox" name="colorGroup" id="colorGroupRed" value="red" /> Red</p>
+	<p><input type="checkbox" name="colorGroup" id="colorGroupGreen" value="green" /> Green</p>
+	<p><input type="checkbox" name="colorGroup" id="colorGroupBlue" value="blue" /> Blue</p>
+	<p><button id="colorButton" type="button">Submit</button></p>
+	<p id="info"></p>
+</div>
+
+<script>
+"use strict";
+
+// Get reference to all checkboxes
+const checkboxes = document.querySelectorAll('input[name="colorGroup"]');
+
+// Function to display selected colors
+const updateSelectedColors = () => {
+	let selectedColors = [];
+	checkboxes.forEach((checkbox) => {
+		if (checkbox.checked) {
+			selectedColors.push(checkbox.value);  // Add checked colors to array
+		}
+	});
+	
+	// Show selected colors in real-time
+	const info = document.getElementById('info');
+	if (selectedColors.length > 0) {
+		info.textContent = `You have selected ${selectedColors.join(' and ')}`;
+	} 
+};
+
+// Add change event listeners to all checkboxes
+checkboxes.forEach((checkbox) => {
+	checkbox.addEventListener('change', updateSelectedColors);
+});
+
+// Add a click event listener to the Submit button
+document.getElementById('colorButton').addEventListener('click', () => {
+	let selectedColors = [];
+	
+	// Loop through each checkbox to see if it's checked
+	checkboxes.forEach((checkbox) => {
+		if (checkbox.checked) {
+			selectedColors.push(checkbox.value);  // Add the checked color to the array
+		}
+	});
+	
+	// Display the selected colors or a message if none are selected
+	const info = document.getElementById('info');
+	if (selectedColors.length > 0) {
+		info.textContent = `Your FINAL CHOICE is ${selectedColors.join(', ')}`;
+	} else {
+		info.textContent = "Please select at least one color!";
+	}
+});
+</script>
+
+</body>
+</html>

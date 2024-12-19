@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+   <title>Hello-4</title>
+   <script>
+     "use strict";
+     // 1) Common JS Objects
+     let colors = ["red", "green", "blue"]; // Array literal
+     let person = {name:"Fred", age:20};   // Object literal
+     let month = new Date().getMonth(); 
+     let age = Math.round(20.999);
+     let age2 = Math.floor(20.999);
+
+     // add your new code here.
+      
+     // Append another color to the end of the colors array
+     colors.push("yellow");
+
+     // Print out the last element in the colors array without hard-coding the index value
+     console.log("Last color:", colors[colors.length - 1]);
+
+     // Loop through the colors array using a for loop and print out each value to the console
+     for (let i = 0; i < colors.length; i++) {
+        console.log("Color:", colors[i]);
+     }
+
+     // Add a new property named 'school' to the person object and print it
+     person.school = "RIT";
+     console.log("School:", person.school);
+
+     // Print out the number of seconds that have passed since 1970
+     let secondsSince1970 = Math.floor(Date.now() / 1000);
+     console.log("Seconds since 1970:", secondsSince1970);
+
+     // Print out the value of pi using the Math object
+     console.log("Value of Pi:", Math.PI);
+
+     // Print out the absolute value of -999 using the Math object
+     console.log("Absolute value of -999:", Math.abs(-999));
+
+     // Print out an "all caps" version of the string "Hello" using a method of the String object
+     let helloString = "Hello";
+     console.log("All caps version:", helloString.toUpperCase());
+      
+</script>
+</head>
+<body>
+</body>
+</html>

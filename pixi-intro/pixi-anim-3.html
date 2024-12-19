@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pixi Animation 3</title>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+    <script src="js/classes.js"></script>
+  </head>
+  <body>
+    <script type="module">
+      const app = new PIXI.Application();
+      await app.init({ width: 640, height: 360 });
+
+      document.body.appendChild(app.canvas);
+
+      let c1 = new Circle();
+      c1.x = 100;
+      c1.y = 100;
+
+      let c2 = new Circle(50, 0xff00ff, 200, 200);
+
+      app.stage.addChild(c1);
+      app.stage.addChild(c2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Phrases</title>
+    <link rel = "stylesheet" href = "random_phrases_styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>League of Legend Random Quotes</h1>
+        <div id="quote">Loading a random phrase...</div>
+        <button onclick="displayQuote()">Generate Random Phrase</button>
+        <footer>Created by Minh Duy Bui</footer>
+    </div>
+
+    <script>
+        // Array of random phrases and authors
+        const phrases = [
+            { quote: "People fear what they cannot understand.", author: "Syndra" },
+            { quote: "Living in fear is not living at all.", author: "Sejuani" },
+            { quote: "Nothing's lost. It's just waiting to be found.", author: "Sivir" },
+            { quote: "A True Master Is An Eternal Student.", author: "Master Yi" },
+            { quote: "Wear A Mask Long Enough, And You Forget The Face Beneath.", author: "Yone" },
+            { quote: "To see the world in black and white is to blind yourself to all of life's colors.", author: "Morgana" },
+            { quote: "Humans think that to believe in something, you have to be serious about it. That's their problem.", author: "Rakan" },
+            { quote: "People don't always listen. But that's no reason to keep quiet.", author: "Seraphine" },
+            { quote: "When you're going to change the world, don't ask for permission.", author: "Viktor" },
+            { quote: "The right word cuts more deeply than a knife.", author: "Camille" },
+        ];
+
+        
+        let lastIndex = -1; // Variable to keep track of the last displayed index
+
+        // Function to display a random quote, ensuring it's different from the previous one
+        function displayQuote() {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * phrases.length);
+            } while (randomIndex === lastIndex); // Ensure the new index is different from the last one
+
+            // Update the lastIndex with the current one
+            lastIndex = randomIndex;
+
+            // Insert the new quote and author with a line break
+            const selectedPhrase = phrases[randomIndex];
+            document.getElementById('quote').innerHTML = `"${selectedPhrase.quote}"<br><br><strong>- ${selectedPhrase.author}</strong>`;
+        }
+
+
+        // Display a random phrase when the page loads
+        window.onload = displayQuote;
+    </script>
+</body>
+</html>

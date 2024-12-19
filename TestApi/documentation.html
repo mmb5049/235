@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I. Source</h1>
+    <a href = "https://www.freepik.com/free-vector/modern-business-background-with-digital-technology-design_12899507.htm#fromView=keyword&page=1&position=1&uuid=b93e2a38-0985-49d2-b424-a48697c0c58c">
+        Background
+    </a>
+    <br>
+    <a href = "https://www.istockphoto.com/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design-gm1409329028-459910308">
+        Image Not Found Placeholder
+    </a>
+    <br>
+
+    <h1>II. Goal</h1>
+    <p>The purpose of this project is to improve on the homework Giphy Finder with a more mordern look on it. Along side with that
+        is new features such as sorting gifs alphabetically or by date, filter the gifs by G, PG-13, PG so that it only show the desired rating.
+        User can now view their past search when hover over a search bar, they can also click on their past search to search for them again. 
+        Also user can favorite their gifs and view them later in the view favorite gifs button. When user search for some gifs, it will automatically
+         display 6 of them only, clicking load more button will add more gifs into display.
+    </p>
+
+    <h1>III. Process</h1>
+    <p>I first add more information being display alongside with the gif such as title, date, favorite. 
+        
+        The first new feature I added is a search history when player hover the search bar, I save the recent search term in a local storage. 
+
+        Then I added a way to sort the gifs alphabetically first, test them out first sort them by date later, I use this by using a sort method. 
+        
+        After that I modify how many gifs being display by user by removing the selection box and added a load more button, it will show 6 gifs at first and then load more button will keep adding
+        more gifs later, the reason I do this is it take less time for user to see their first gifs and if they want to see more, they don't
+        need to scroll back to the top to change the amount they want to see. 
+        
+        Then I add a new filter feature where user can filter gifs with a desired rating, I add a new selection box and use the .value
+        to compare the value in the box and the rating provided by the API.
+
+        I also created a system to mark GIFs as favorites with a star icon (⭐/☆). Stored favorite GIFs locally using localStorage for persistence.
+        A "View Favorites" button being added to display only favorited GIFs and hid the "Load More" button in this view because it already
+        display all the favorite gifs all at once.
+
+        Debugging is the last step where I clean up the project and modify the code so that I download and sort everything gifs and first 
+        then display later so that it new gifs being loaded by "load more" button won't be unsorted.
+    </p>
+
+    <h1>IV. Note</h1>
+    <p>When using this website, you might encounter the 429 response code in console.log when there are no gifs display at all,
+       this is when my API key rate limits exceed since I'm using a free API key that I get from GIPHY, it's out of my power 
+       (unless I pay to get a better key) so please come back at least an hour later when they reset the limit. Also when you click
+       load more button, the number new gifs being added is not consistent due the code trying to filter out repeated gifs. One last thing
+       is that the sort and filter is not intended to be used for favorite gifs, using those will bring you back to the search page.
+    </p>
+</body>
+</html>

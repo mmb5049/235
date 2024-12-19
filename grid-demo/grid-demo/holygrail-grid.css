@@ -1,0 +1,93 @@
+/**************************************
+General Formatting (Leave This Alone!)
+**************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /* sets base font size for rem sizing */
+    font-size: 16px;
+    font-family: Calibri, Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    background: linear-gradient(90deg, rgba(9,9,121,1) 35%, rgba(0,231,255,1) 100%);
+}
+
+header,
+footer {
+    /* centers header and footer content horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #86af49;
+}
+
+nav,
+aside,
+article {
+    padding: .5rem;
+}
+
+article{
+    background-color: white;
+}
+
+nav, aside {
+    background-color: #b5e7a0;
+    border: 1px dotted black; 
+}
+
+aside{
+    display: none;
+}
+/*****************
+Grid Formatting  
+*****************/
+
+div#wrapper{
+    display: grid;
+    grid-template-rows: 1fr 2fr 10fr 2fr 1fr;
+    grid-template-areas: 
+        "header"
+        "navbar"
+        "content"
+        "sidebar"
+        "footer";
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:760px){
+
+    div#wrapper{
+        display: grid;
+        grid-template-columns: 20% 1fr 20%;
+        grid-template-rows: 15% 60% 15%;
+
+        grid-template-areas:
+            "header header header"
+            "navbar content sidebar"
+            "footer footer footer";
+
+        min-height: none;
+        
+    }
+
+    aside{
+        display: block;
+    }
+}
+
+header{grid-area: header}
+nav{grid-area: navbar}
+article{grid-area: content}
+aside{grid-area: sidebar}
+footer{grid-area: footer}
+
+
